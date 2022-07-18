@@ -1,33 +1,4 @@
-<?php
-$server="localhost";
-$username="root";
-$passward="";
-$database="zalego";
-
-$conn= mysqli_connect($server,$username,$passward,$database);
-
-if(isset($_POST["submitButton"]))
-{
-
-//1. fetch form data
-$firstname =$_POST['firstname'];
-$lastname =$_POST['lastname'];
-$email =$_POST['email'];
-$phonenumber =$_POST['phonenumber'];
-$message =$_POST['message'];
-//2. submit form data
-$insertData = mysqli_query($conn, "INSERT INTO contactus(firstname,lastname,email,phonenumber,message) VALUES('$firstname','
-$lastname','$email','$phonenumber','$message')");
-if($insertData)
-{
-    echo "Data submitted sucessfully.";
-}
-else{
-    echo "Error occured";
-}
-
-}
-?>
+<?php include('process.php') ?>
 
  <!DOCTYPE html> 
 <html lang="en">
@@ -36,40 +7,17 @@ else{
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
         <title> Bootstrap-Gridlayout</title>
+        <link rel="stylesheet" href="registernow.php">
+        <link rel="stylesheet" href="aboutus.php">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        
     </head>
     <body>
         <!-- navigation bar here -->
-            <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#" >Zalego Academy</a>
-                    <buttton class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="toggler-icon top-bar"></span>
-                        <span class="toggler-icon middle-bar"></span>
-                        <span class="toggler-icon bottom-bar"></span>
-
-
-                        
-                    </buttton>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.php"> Home</a>
-                            </li>
-                            <li class="nav-item"> 
-                                <a class="nav-link" href="aboutus.php">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </nav>
+        <?php include('navbar.php')?>
+    
         <!-- End navigation bar here -->
 
 
