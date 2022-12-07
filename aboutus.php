@@ -1,28 +1,6 @@
 <?php
-$server="localhost";
-$username="root";
-$password="";
-$database="zalego";
-
-$conn= mysqli_connect($server,$username,$password,$database);
-
-if(isset($_POST["submitButton"]))
-{
-
-//1. fetch form data
-$email =$_POST['email'];
-
-//2. submit form data
-$insertData = mysqli_query($conn, "INSERT INTO subscribers(email) VALUES('$email')");
-if($insertData)
-{
-    echo "Data submitted sucessfully.";
-}
-else{
-    echo "Error occured";
-}
-
-}
+require_once('dbconnection.php')
+require_once('enrollment.php')
 ?>
 
 <!DOCTYPE html> 
@@ -39,7 +17,7 @@ else{
         
     </head>
     <body>
-               <!-- navigation bar here -->
+    <!-- navigation bar here -->
        <?php include('navbar.php')?>
     <!-- End navigation bar here -->
 

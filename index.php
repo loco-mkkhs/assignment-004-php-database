@@ -1,4 +1,6 @@
-<?php include('process.php') ?>
+<?php include('process.php') 
+include('process-records.php')
+?>
 
  <!DOCTYPE html> 
 <html lang="en">
@@ -93,7 +95,7 @@
                             </div>
                         </div>
                         <br>
-                        <button type="submit" name="submitButton" class="btn btn-primary">send a message</button>
+                        <button type="submit" name="submitfutton" class="btn btn-primary">send a message</button>
 
                     </form>
 
